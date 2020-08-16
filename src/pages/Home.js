@@ -9,7 +9,6 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
       {currentUser && <button onClick={() => auth.signOut()}>Sign out</button>}
     </>
   )

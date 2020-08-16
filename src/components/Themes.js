@@ -8,10 +8,10 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  body: '#282a36',
-  bodyText: '#f8f8f2',
-  button: '#393C4B',
-  toggleBorder: '#21222C',
-  accentColor: '#FF79C5',
-  toggleBgColor: '#f1fa8c',
+  body: '#292D3E',
+  bodyText: '#676E95',
+  button: '#303348',
+  toggleBorder: '#2b2a3e',
+  accentColor: '#ab47bc',
+  toggleBgColor: '#c3e88d',
 }
