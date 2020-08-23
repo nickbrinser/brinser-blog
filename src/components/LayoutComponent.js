@@ -37,4 +37,6 @@ export const GridItem = styled.div`
 
 export const StyledList = styled.ul`
   list-style: none;
+  padding: 0;
+  margin-left: 28px;
 `

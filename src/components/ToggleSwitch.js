@@ -6,8 +6,8 @@ import { FaMugHot, FaGlassWhiskey } from 'react-icons/fa'
 const ToggleButton = styled.button`
   display: flex;
   justify-content: space-between;
-  border: 1px solid ${({ theme }) => theme.toggleBorder};
-  background: ${({ theme }) => theme.toggleBgColor};
+  border: none;
+  background: ${({ theme }) => theme.headerText};
   border-radius: 35px;
   overflow: hidden;
   margin-left: 20px;
@@ -17,7 +17,7 @@ const ToggleButton = styled.button`
     width: 15px;
     height: 15px;
     transition: all 0.3s linear;
-    color: ${({ theme }) => theme.toggleBorder};
+    color: ${({ theme }) => theme.bodyText};
     &:first-child {
       transform: ${({ lightTheme }) =>
         lightTheme ? 'translateX(0px)' : 'translateX(150px)'};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { ThemeProvider } from 'styled-components'
@@ -14,11 +14,9 @@ import SocialLinksBar from './components/SocialLinksBar'
 
 function App() {
   const [theme, toggleTheme, componentMounted] = useDarkMode()
-
   const themeMode = theme === 'light' ? lightTheme : darkTheme
 
   if (!componentMounted) {
-    console.log()
     return null
   }
   return (

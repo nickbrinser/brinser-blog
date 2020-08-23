@@ -1,17 +1,42 @@
+// serika light
 export const lightTheme = {
-  body: '#FAFAFA',
-  bodyText: '#9D9D9F',
-  button: '#DBDBDC',
-  toggleBorder: '#DBDBDC',
-  accentColor: '#2979ff',
-  toggleBgColor: '#A0A1A7',
+  body: '#e1e1e3',
+  headerText: '#aaaeb3',
+  bodyText: '#323437',
+  accentColor: '#e2b714',
+  linkColor: '#aaaeb3',
+}
+// serika dark
+export const darkTheme = {
+  body: '#323437',
+  headerText: '#646669',
+  bodyText: '#d1d0c5',
+  accentColor: '#e2b714',
+  linkColor: '#646669',
 }
 
-export const darkTheme = {
-  body: '#292D3E',
-  bodyText: '#676E95',
-  button: '#303348',
-  toggleBorder: '#2b2a3e',
+export const milkshake = {
+  body: '#FDFDFD',
+  bodyText: '#212b43',
+  button: '#62cfe6',
+  toggleBorder: '#FDFDFD',
+  accentColor: '#2979ff',
+  toggleBgColor: '#212b43',
+  linkOne: '#f19dac',
+  linkTwo: '#ba96db',
+  linkThree: '#73e4d0',
+  linkFour: '#61cfe6',
+}
+
+export const dracula = {
+  body: '#282a36',
+  bodyText: '#f2f2f2',
+  button: '#bd93f9',
+  toggleBorder: '#282a36',
   accentColor: '#ab47bc',
-  toggleBgColor: '#c3e88d',
+  toggleBgColor: '#f2f2f2',
+  linkOne: '#ec75c4',
+  linkTwo: '#ffb86c',
+  linkThree: '#50fa7b',
+  linkFour: '#8be9fd',
 }
