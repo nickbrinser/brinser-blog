@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { auth } from '../base'
 import { AuthContext } from '../Auth'
 
+import HeroText from '../components/HeroText'
+
 import CoffeeCup from '../components/CoffeeCup'
 
 const Home = () => {
@@ -9,6 +11,7 @@ const Home = () => {
 
   return (
     <>
+      <HeroText />
       {currentUser && <button onClick={() => auth.signOut()}>Sign out</button>}
     </>
   )

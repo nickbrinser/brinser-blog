@@ -5,48 +5,64 @@ import { StyledList } from './LayoutComponent'
 import ToggleSwitch from './ToggleSwitch'
 import Logo from '../assets/Logo'
 
-const StyledHeader = styled.header`
-  background: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.headerText};
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
-`
 const StyledNav = styled.nav`
+  font-size: 24px;
   width: 100%;
-  font-size: 18px;
   display: flex;
-  flex-direction: row;
+
   align-items: center;
-  justify-content: space-between;
 `
+const NavLeft = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+`
+
+const NavCenter = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+`
+
+const NavRight = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+`
+
 const NavLink = styled(Link)`
   color: inherit;
-  text-decoration: none;
-  margin-right: 20px;
 
+  text-decoration: none;
   &:hover {
     color: ${({ theme }) => theme.accentColor};
   }
 `
-
-const StyledLogo = styled(Logo)`
-  color: green;
-`
-
 const Header = ({ theme, toggleTheme }) => {
   return (
-    <StyledHeader>
-      <StyledNav>
+    <StyledNav>
+      <NavLeft>
         <ToggleSwitch theme={theme} toggleTheme={toggleTheme} />
+      </NavLeft>
+      <NavCenter>
         <NavLink to="/">
-          <StyledLogo />
+          <Logo />
         </NavLink>
-        <StyledList>
-          <NavLink to="/about">about</NavLink>
-          <NavLink to="/signup">blog</NavLink>
-          <NavLink to="/portfolio">portfolio</NavLink>
+      </NavCenter>
+      <NavRight>
+        <StyledList horizontal>
+          <li>
+            <NavLink to="/about">about</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signup">blog</NavLink>
+          </li>
+          <li>
+            <NavLink to="/portfolio">portfolio</NavLink>
+          </li>
         </StyledList>
-      </StyledNav>
-    </StyledHeader>
+      </NavRight>
+    </StyledNav>
   )
 }
 

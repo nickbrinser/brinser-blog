@@ -4,11 +4,13 @@ import { StyledList } from './LayoutComponent'
 import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const LeftHandLinks = styled.nav`
-  font-size: 24px;
+  font-size: 36px;
+  padding: 6rem 0 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
 `
 const SocialLink = styled.a`
   text-decoration: none;

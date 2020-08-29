@@ -26,7 +26,7 @@ function App() {
           <GlobalStyles />
           <LayoutGrid>
             <Row>
-              <Col size={2}>
+              <Col size={1}>
                 <Header theme={theme} toggleTheme={toggleTheme} />
               </Col>
             </Row>
@@ -34,8 +34,10 @@ function App() {
               <Col>
                 <SocialLinksBar />
               </Col>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
+              <Col size="1">
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+              </Col>
             </Row>
           </LayoutGrid>
         </ThemeProvider>

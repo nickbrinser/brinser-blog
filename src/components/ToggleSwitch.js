@@ -10,13 +10,12 @@ const ToggleButton = styled.button`
   background: ${({ theme }) => theme.headerText};
   border-radius: 35px;
   overflow: hidden;
-  margin-left: 20px;
 
   cursor: pointer;
   svg {
-    width: 15px;
-    height: 15px;
-    transition: all 0.3s linear;
+    width: 18px;
+    height: 18px;
+    transition: all 0.2s linear;
     color: ${({ theme }) => theme.bodyText};
     &:first-child {
       transform: ${({ lightTheme }) =>

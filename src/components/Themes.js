@@ -5,6 +5,9 @@ export const lightTheme = {
   bodyText: '#323437',
   accentColor: '#e2b714',
   linkColor: '#aaaeb3',
+  logoBack: '#e2b714',
+  logoFront: '#aaaeb3',
+  logoName: '#323437',
 }
 // serika dark
 export const darkTheme = {
@@ -13,6 +16,9 @@ export const darkTheme = {
   bodyText: '#d1d0c5',
   accentColor: '#e2b714',
   linkColor: '#646669',
+  logoBack: '#646669',
+  logoFront: '#e2b714',
+  logoName: '#F2F2F2',
 }
 
 export const milkshake = {

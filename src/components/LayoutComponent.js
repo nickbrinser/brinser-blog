@@ -36,7 +36,15 @@ export const GridItem = styled.div`
 `
 
 export const StyledList = styled.ul`
+  ${props =>
+    props.horizontal &&
+    `
+  display: flex;
+`}
   list-style: none;
   padding: 0;
-  margin-left: 28px;
+
+  li {
+    padding-right: 10px;
+  }
 `
