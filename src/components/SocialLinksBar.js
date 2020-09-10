@@ -4,13 +4,13 @@ import { StyledList } from './LayoutComponent'
 import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const LeftHandLinks = styled.nav`
-  font-size: 36px;
-  padding: 6rem 0 0 2rem;
+  font-size: 2rem;
+  /* padding: 6rem 0 0 2rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: ${({ absolute }) => absolute && 'absolute'};
 `
 const SocialLink = styled.a`
   text-decoration: none;
@@ -40,10 +40,10 @@ const LinkedinIcon = styled(FaLinkedin)`
   }
 `
 
-const SocialLinksBar = ({ theme, toggleTheme }) => {
+const SocialLinksBar = ({ theme, toggleTheme, horizontal, absolute }) => {
   return (
     <LeftHandLinks>
-      <StyledList>
+      <StyledList horizontal={horizontal}>
         <li>
           <SocialLink href="https://github.com/nickbrinser" target="__blank">
             <GithubIcon />

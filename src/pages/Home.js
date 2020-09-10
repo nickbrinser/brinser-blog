@@ -1,19 +1,20 @@
-import React, { useContext } from 'react'
-import { auth } from '../base'
-import { AuthContext } from '../Auth'
+import React from 'react'
+import styled from 'styled-components'
 
 import HeroText from '../components/HeroText'
 
-import CoffeeCup from '../components/CoffeeCup'
+// import CoffeeCup from '../components/CoffeeCup'
+
+const HomeContent = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const Home = () => {
-  const { currentUser } = useContext(AuthContext)
-
   return (
-    <>
+    <HomeContent>
       <HeroText />
-      {currentUser && <button onClick={() => auth.signOut()}>Sign out</button>}
-    </>
+    </HomeContent>
   )
 }
 export default Home

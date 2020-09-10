@@ -12,6 +12,16 @@ const media = {
       ${styles}
     }
   `,
+  sm: styles => `
+  @media only screen and (max-width: 768px) {
+    ${styles}
+  }
+  `,
+  lg: styles => `
+  @media only screen and (min-width: 768px) {
+    ${styles}
+  }
+  `,
 }
 
 export const Col = styled.div`
@@ -41,6 +51,8 @@ export const StyledList = styled.ul`
     `
   display: flex;
 `}
+  ${props =>
+    props.collapse && media[props.collapse](`display: none`)}
   list-style: none;
   padding: 0;
 

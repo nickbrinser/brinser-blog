@@ -10,6 +10,9 @@ const Svg = styled.svg.attrs({
 const StyledLogo = styled(Svg)`
   height: auto;
   width: 6em;
+  path {
+    transition: all 0.2s linear;
+  }
   path:nth-of-type(1) {
     fill: ${({ theme }) => theme.logoBack};
   }

@@ -1,9 +1,24 @@
 import React, { useCallback, useContext } from 'react'
+import styled from 'styled-components'
 import { withRouter, Redirect } from 'react-router'
 import { auth } from '../base'
 import { AuthContext } from '../Auth'
 
-const Login = ({ history }) => {
+const StyledLabel = styled.label`
+  padding: 5px;
+`
+const StyledInput = styled.input`
+  background-color: ${({ theme }) => theme.headerText};
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.bodyText};
+`
+
+const Login = ({ history, location }) => {
   const handleLogin = useCallback(
     async event => {
       event.preventDefault()
@@ -20,21 +35,25 @@ const Login = ({ history }) => {
 
   const { currentUser } = useContext(AuthContext)
   if (currentUser) {
-    return <Redirect to="/" />
+    return <Redirect to={location.state.from} />
   }
-
+  // TODO: change these styles to Styled Component
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="password" />
-        </label>
+        <StyledLabel htmlFor="email">Email:</StyledLabel>
+        <StyledInput name="email" type="email" placeholder="email" />
+
+        <StyledLabel htmlFor="password">Password:</StyledLabel>
+        <StyledInput name="password" type="password" placeholder="password" />
         <button type="submit">Log in</button>
       </form>
     </div>

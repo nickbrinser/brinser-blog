@@ -11,12 +11,17 @@ const ToggleButton = styled.button`
   border-radius: 35px;
   overflow: hidden;
 
+  &:hover svg {
+    color: ${({ theme }) => theme.accentColor};
+  }
+
   cursor: pointer;
   svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     transition: all 0.2s linear;
     color: ${({ theme }) => theme.bodyText};
+
     &:first-child {
       transform: ${({ lightTheme }) =>
         lightTheme ? 'translateX(0px)' : 'translateX(150px)'};

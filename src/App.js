@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { ThemeProvider } from 'styled-components'
@@ -9,8 +9,11 @@ import { useDarkMode } from './effects/useDarkMode'
 import { AuthProvider } from './Auth'
 import Header from './components/Header'
 import Home from './pages/Home'
+import Blog from './pages/Blog'
 import Login from './pages/Login'
+import CreatePost from './pages/CreatePost'
 import SocialLinksBar from './components/SocialLinksBar'
+import PrivateRoute from './PrivateRoute'
 
 function App() {
   const [theme, toggleTheme, componentMounted] = useDarkMode()
@@ -26,17 +29,19 @@ function App() {
           <GlobalStyles />
           <LayoutGrid>
             <Row>
-              <Col size={1}>
+              <Col size="1">
                 <Header theme={theme} toggleTheme={toggleTheme} />
               </Col>
             </Row>
             <Row>
-              <Col>
-                <SocialLinksBar />
+              <Col collapse="xs">
+                <SocialLinksBar absolute />
               </Col>
               <Col size="1">
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/blog" component={Blog} />
+                <PrivateRoute exact path="/createpost" component={CreatePost} />
               </Col>
             </Row>
           </LayoutGrid>

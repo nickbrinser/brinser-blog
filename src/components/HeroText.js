@@ -2,21 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledHeroSection = styled.section`
-  height: 50vh;
+  padding-top: 2rem;
+  height: 25vh;
+  width: 50vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-const Greeting = styled.h1`
-  font-size: 3rem;
 `
 
 const HeroText = () => {
   return (
     <StyledHeroSection>
-      <div>
-        <Greeting>THE</Greeting>
-      </div>
+      <h1>Hello, I'm Nick Brinser.</h1>
+      <h2>Husband, Developer, and Coffee Nerd.</h2>
     </StyledHeroSection>
   )
 }
