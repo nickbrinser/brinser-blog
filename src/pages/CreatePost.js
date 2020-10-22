@@ -33,7 +33,7 @@ const StyledTextField = styled.textarea`
   resize: none;
   padding: 10px;
   font-size: 1rem;
-  /* white-space: pre-line; */
+  white-space: pre-line;
 `
 
 const StyledSubmitButton = styled.button`
@@ -49,7 +49,9 @@ const CreatePost = () => {
   }
 
   const onCreate = () => {
-    firestore.collection('blog-posts').add(postValues)
+    firestore
+      .collection('blog-posts')
+      .add({ ...postValues, created: Date.now() })
   }
 
   return (

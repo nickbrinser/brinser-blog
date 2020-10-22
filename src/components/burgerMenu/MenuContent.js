@@ -9,13 +9,12 @@ import SocialLinksBar from '../SocialLinksBar'
 
 const StyledMenu = styled.nav`
   position: absolute;
-  padding-top: 25px;
   z-index: 20;
   left: 0px;
   top: 0px;
   background: ${({ theme }) => theme.body};
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   display: ${({ open }) => (open ? 'flex' : 'none')};
   height: 100vh;
   width: 100vw;
@@ -38,24 +37,32 @@ const MenuContent = ({ open, setOpen }) => {
 
   return (
     <StyledMenu open={open}>
-      <StyledList onClick={() => setOpen(false)}>
+      <StyledList>
         <StyledListItem>
-          <NavLink to="/about">about</NavLink>
+          <NavLink to="/about" onClick={() => setOpen(false)}>
+            about
+          </NavLink>
         </StyledListItem>
         <StyledListItem>
-          <NavLink to="/signup">blog</NavLink>
+          <NavLink to="/blog" onClick={() => setOpen(false)}>
+            blog
+          </NavLink>
         </StyledListItem>
         <StyledListItem>
-          <NavLink to="/portfolio">portfolio</NavLink>
+          <NavLink to="/portfolio" onClick={() => setOpen(false)}>
+            portfolio
+          </NavLink>
         </StyledListItem>
-        <li>
-          <SocialLinksBar horizontal />
-        </li>
-        <li>
+        <StyledListItem>
+          <SocialLinksBar horizontal handleClick={() => setOpen(false)} />
+        </StyledListItem>
+        <StyledListItem>
           {currentUser && (
-            <button onClick={() => auth.signOut()}>Sign Out</button>
+            <button onClick={() => auth.signOut() && setOpen(false)}>
+              Sign Out
+            </button>
           )}
-        </li>
+        </StyledListItem>
       </StyledList>
     </StyledMenu>
   )

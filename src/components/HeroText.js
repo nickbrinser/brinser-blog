@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledHeroSection = styled.section`
   padding-top: 2rem;
   height: 25vh;
-  width: 50vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,8 +14,10 @@ const StyledHeroSection = styled.section`
 const HeroText = () => {
   return (
     <StyledHeroSection>
-      <h1>Hello, I'm Nick Brinser.</h1>
-      <h2>Husband, Developer, and Coffee Nerd.</h2>
+      <div>
+        <h1>Hello, I'm Nick Brinser.</h1>
+        <h2>Husband, Developer, and Coffee Nerd.</h2>
+      </div>
     </StyledHeroSection>
   )
 }

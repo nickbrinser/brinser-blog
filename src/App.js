@@ -9,7 +9,8 @@ import { useDarkMode } from './effects/useDarkMode'
 import { AuthProvider } from './Auth'
 import Header from './components/Header'
 import Home from './pages/Home'
-import Blog from './pages/Blog'
+import BlogList from './pages/BlogList'
+import BlogPost from './pages/BlogPost'
 import Login from './pages/Login'
 import CreatePost from './pages/CreatePost'
 import SocialLinksBar from './components/SocialLinksBar'
@@ -40,7 +41,8 @@ function App() {
               <Col size="1">
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/blog" component={Blog} />
+                <Route exact path="/blog" component={BlogList} />
+                <Route exact path="/blog:blogId" component={BlogPost} />
                 <PrivateRoute exact path="/createpost" component={CreatePost} />
               </Col>
             </Row>

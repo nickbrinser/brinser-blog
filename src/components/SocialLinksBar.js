@@ -40,16 +40,22 @@ const LinkedinIcon = styled(FaLinkedin)`
   }
 `
 
-const SocialLinksBar = ({ theme, toggleTheme, horizontal, absolute }) => {
+const SocialLinksBar = ({
+  theme,
+  toggleTheme,
+  horizontal,
+  absolute,
+  handleClick,
+}) => {
   return (
     <LeftHandLinks>
       <StyledList horizontal={horizontal}>
-        <li>
+        <li onClick={handleClick}>
           <SocialLink href="https://github.com/nickbrinser" target="__blank">
             <GithubIcon />
           </SocialLink>
         </li>
-        <li>
+        <li onClick={handleClick}>
           <SocialLink
             href="https://www.instagram.com/nickbrinser/"
             target="__blank"
@@ -57,12 +63,12 @@ const SocialLinksBar = ({ theme, toggleTheme, horizontal, absolute }) => {
             <InstagramIcon />
           </SocialLink>
         </li>
-        <li>
+        <li onClick={handleClick}>
           <SocialLink href="https://twitter.com/notteennick" target="__blank">
             <TwitterIcon />
           </SocialLink>
         </li>
-        <li>
+        <li onClick={handleClick}>
           <SocialLink
             href="https://www.linkedin.com/in/nickbrinser/"
             target="__blank"

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
+  position: relative;
   justify-content: space-around;
   width: 1.5rem;
   height: 1.5rem;

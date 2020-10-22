@@ -18,24 +18,24 @@ const StyledInput = styled.input`
   color: ${({ theme }) => theme.bodyText};
 `
 
-const Login = ({ history, location }) => {
+const Login = ({ history }) => {
   const handleLogin = useCallback(
     async event => {
       event.preventDefault()
       const { email, password } = event.target.elements
       try {
         await auth.signInWithEmailAndPassword(email.value, password.value)
-        history.push('/')
+        history.push(history.location)
       } catch (error) {
         alert(error)
       }
     },
     [history]
   )
-
+  console.log(history)
   const { currentUser } = useContext(AuthContext)
   if (currentUser) {
-    return <Redirect to={location.state.from} />
+    return <Redirect to={history.location.state.from} />
   }
   // TODO: change these styles to Styled Component
   return (
