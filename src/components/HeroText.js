@@ -2,13 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledHeroSection = styled.section`
-  padding-top: 2rem;
   height: 25vh;
-  width: 75vw;
+  width: 50vw;
   display: flex;
+  border: 1px solid ${({ theme }) => theme.bodyText};
+  box-shadow: 5px 5px 0 ${({ theme }) => theme.bodyText};
+  border-radius: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ${({ theme }) => theme.linkColor};
 `
 
 const HeroText = () => {

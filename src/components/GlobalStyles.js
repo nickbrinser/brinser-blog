@@ -8,9 +8,9 @@ export const GlobalStyles = createGlobalStyle`
     transition: color 0.2s ease-out, background 0.2s ease-out;
     display: flex;
     flex-direction: column;
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter Regular", sans-serif;
     textarea {
-      font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Inter Regular", sans-serif;
       color: ${({ theme }) => theme.bodyText};
     }
     button {

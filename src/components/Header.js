@@ -12,6 +12,7 @@ import Logo from '../assets/Logo'
 
 const StyledNav = styled.nav`
   font-size: 1.25rem;
+  padding-bottom: 20px;
   width: 100%;
   display: flex;
   align-items: center;

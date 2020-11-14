@@ -42,7 +42,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/blog" component={BlogList} />
-                <Route exact path="/blog:blogId" component={BlogPost} />
+                <Route exact path="/blog/:blogId" component={BlogPost} />
                 <PrivateRoute exact path="/createpost" component={CreatePost} />
               </Col>
             </Row>
