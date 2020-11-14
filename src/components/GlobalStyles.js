@@ -40,6 +40,19 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-
+  a {
+    color: ${({ theme }) => theme.headerText};
+    text-decoration: none;
+    &:hover {
+      color: ${({ theme }) => theme.accentColor};
+    }
+  }
+  pre {
+    padding: 16px;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: ${({ theme }) => theme.headerText};
+    border-radius: 6px;
+  }
 }
 `
