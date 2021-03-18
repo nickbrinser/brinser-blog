@@ -1,8 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { auth } from '../base'
-import { AuthContext } from '../Auth'
+import { useAuth } from '../Auth'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import * as RD from '@devexperts/remote-data-ts'
+import * as O from 'fp-ts/Option'
+import { pipe } from 'fp-ts/lib/function'
 
 import { StyledList } from './LayoutComponent'
 import ToggleSwitch from './ToggleSwitch'
@@ -16,26 +19,30 @@ const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-areas: 'controls logo links';
 `
 const NavLeft = styled.div`
-  flex: 1;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
+  grid-area: controls;
 `
 
 const NavCenter = styled.div`
-  flex: 1;
   align-items: center;
   display: flex;
   justify-content: center;
+  grid-area: logo;
 `
 
 const NavRight = styled.div`
-  flex: 1;
   align-items: center;
   display: flex;
   justify-content: center;
+  grid-area: links;
 `
 
 const NavLink = styled(Link)`
@@ -48,12 +55,25 @@ const NavLink = styled(Link)`
 `
 
 const Header = ({ theme, toggleTheme }) => {
-  const { currentUser } = useContext(AuthContext)
+  const currentUser = useAuth()
   return (
     <StyledNav>
       <NavLeft>
-        {currentUser && (
-          <button onClick={() => auth.signOut()}>Sign Out</button>
+        {pipe(
+          currentUser,
+          RD.fold(
+            () => null,
+            () => null,
+            () => null,
+            user =>
+              pipe(
+                user,
+                O.fold(
+                  () => <></>,
+                  () => <button onClick={() => auth.signOut()}>Sign Out</button>
+                )
+              )
+          )
         )}
         <ToggleSwitch theme={theme} toggleTheme={toggleTheme} />
       </NavLeft>

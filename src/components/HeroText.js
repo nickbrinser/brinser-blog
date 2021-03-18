@@ -12,6 +12,7 @@ const StyledHeroSection = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.linkColor};
+  margin-bottom: 45px;
 `
 
 const HeroText = () => {
